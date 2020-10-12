@@ -1,12 +1,19 @@
 package com.pitang.desafio.domain;
 
 import java.io.Serializable;
-import java.sql.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String firsName;
 	private String lastName;
@@ -15,7 +22,7 @@ public class Usuario implements Serializable {
 	private String login;
 	private String password;
 	private String phone;
-	//private List cars;
+	//List cars;
 
 	public Usuario() {
 
@@ -31,7 +38,7 @@ public class Usuario implements Serializable {
 		this.login = login;
 		this.password = password;
 		this.phone = phone;
-		//this.cars = cars;
+		// this.cars = cars;
 	}
 
 	public Integer getId() {
